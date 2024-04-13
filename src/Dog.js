@@ -3,7 +3,6 @@ import { useParams } from 'react-router-dom';
 const Dog = ({ dogs }) => {
     const { name } = useParams();
     const dog = dogs.find(dog => dog.name.toLowerCase() === name);
-    console.log(dog)
 
     return (
         <>
