@@ -1,7 +1,8 @@
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 
 import Nav from './Nav';
 import Home from './Home';
+import Dog from './Dog';
 import whiskey from './whiskey.jpg';
 import duke from './duke.jpg';
 import perry from './perry.jpg';
@@ -17,7 +18,10 @@ function App(props) {
       <BrowserRouter>
         <Nav dogNames={dogNames} />
         <Routes>
-          <Route path="/dogs" element={<Home />} />
+          <Route path="/dogs" element={<Home dogs={dogs}/>} />
+          <Route path="/dogs/:name" element={<Dog dogs={dogs}/>} />
+
+          <Route path="*" element={<Navigate to="/dogs" replace />} />
         </Routes>
       </BrowserRouter>
     </>

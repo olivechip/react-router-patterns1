@@ -1,0 +1,15 @@
+* {
+    text-align: center;
+}
+
+h4 {
+    font-style: italic;
+    padding: none;
+    margin: none;
+}
+
+img {
+    max-height: 150px;
+    border: solid;
+    border-radius: 15px;
+}
