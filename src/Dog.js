@@ -1,11 +1,12 @@
 import { useParams } from 'react-router-dom';
+import NotFound from './NotFound';
 
 const Dog = ({ dogs }) => {
     const { name } = useParams();
     const dog = dogs.find(dog => dog.name.toLowerCase() === name);
-
+    
     return (
-        <>
+        <> {!dog ? <NotFound /> : 
             <div>
                 <h4>{dog.name}</h4>
                 <img src={dog.src} alt={dog.name}></img>
@@ -15,7 +16,7 @@ const Dog = ({ dogs }) => {
                         <p>{fact}</p>
                     ))}
                 </div>
-            </div>
+            </div>}
         </>
     )
 }
